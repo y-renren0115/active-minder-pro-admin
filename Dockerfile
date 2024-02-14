@@ -5,10 +5,8 @@ FROM node:18.17.0
 WORKDIR /app
 
 # アプリケーションの依存関係のインストール
-COPY package*.json ./
-RUN npm install -g npm@latest
+COPY ./package.json ./
 RUN npm cache clean --force
-RUN npm install -g npm@6
 RUN npm install
 
 # アプリケーションのソースをコピー
